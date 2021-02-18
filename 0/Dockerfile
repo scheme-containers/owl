@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /build
 COPY checksum checksum
-ADD https://gitlab.com/owl-lisp/owl/-/archive/v0.1.23/owl-v0.1.23.tar.gz \
+ADD https://gitlab.com/owl-lisp/owl/-/archive/v0.2/owl-v0.2.tar.gz \
   owl.tar.gz
 RUN sha256sum owl.tar.gz && sha256sum -c checksum
 RUN mkdir owl && tar -C owl --strip-components 1 -xf owl.tar.gz
